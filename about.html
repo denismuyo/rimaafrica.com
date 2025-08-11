@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rima Africa Safaris - Safari Packages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-green': '#0C2E14',
+                        'earthy-beige': '#D7CEA1',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2));
+        }
+        .savannah-bg {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0Q3Q0VBMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGNUY1RTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIgLz4KPC9zdmc+Cg==');
+            background-size: cover;
+        }
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+        .package-image {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Sticky Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Logo -->
+            <div class="flex justify-center py-2">
+                <div class="text-2xl font-bold text-forest-green">
+                    <span class="text-earthy-beige">RIMA</span> AFRICA SAFARIS
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex justify-center space-x-8 py-3">
+                <a href="#" class="text-gray-700 hover:text-forest-green font-medium">Home</a>
+                <a href="#" class="text-gray-700 hover:text-forest-green font-medium">About</a>
+                <a href="#" class="text-forest-green font-bold border-b-2 border-forest-green">Safaris</a>
+                <a href="#" class="text-gray-700 hover:text-forest-green font-medium">Gallery</a>
+                <a href="#" class="text-gray-700 hover:text-forest-green font-medium">Blog</a>
+                <a href="#" class="text-gray-700 hover:text-forest-green font-medium">Contact</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex justify-center py-2">
+                <button class="text-forest-green">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 md:h-screen max-h-[800px] w-full">
+        <!-- Background image with gradient overlay -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589561253837-603ef8a9046e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center hero-gradient"></div>
+        
+        <!-- Hero content -->
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl px-4">
+                Discover the Wild Beauty of Africa with Rima Africa Safaris
+            </h1>
+            <a href="#packages" class="bg-forest-green hover:bg-green-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                Explore Safaris
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-forest-green mb-8">About our Packages</h2>
+            <p class="text-lg text-gray-700 text-center leading-relaxed">
+                Discover unforgettable safari adventures crafted by local experts. Whether you're looking for a romantic escape, family adventure, or luxury wildlife tour, Rima Africa Safaris offers a variety of tailored packages to suit every traveler's dream. Explore Kenya's iconic destinations—from the vast plains of Maasai Mara to the shadow of Mount Kilimanjaro in Amboseli and the unique culture of Samburu.
+            </p>
+        </div>
+    </section>
+
+    <!-- Bullet Guide Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Left Column - Bullet Points -->
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-forest-green mb-6">How to Book Your Safari</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">✅</span>
+                            <span class="text-gray-700">Click on your preferred safari package to view details.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📥</span>
+                            <span class="text-gray-700">Download the full itinerary – includes day-by-day schedule and all pricing.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📝</span>
+                            <span class="text-gray-700">Book by filling out our easy online booking form.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📞</span>
+                            <span class="text-gray-700">Our team will reach out within 12 hours to confirm and finalize your adventure!</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right Column - Image -->
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                         alt="Wildebeest migration" 
+                         class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Safari Packages Section -->
+    <section id="packages" class="py-16 savannah-bg">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold text-center text-forest-green mb-12">All Safari Packages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                             alt="Maasai Mara Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            3 Days / 2 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+                        <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+                        <a href="/itineraries/maasai-mara.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                             alt="Amboseli Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            4 Days / 3 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Amboseli Kilimanjaro Views</h3>
+                        <p class="text-gray-600 mb-4">Witness elephants with the majestic Mount Kilimanjaro as your backdrop.</p>
+                        <a href="/itineraries/amboseli.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" 
+                             alt="Samburu Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            5 Days / 4 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Samburu Cultural Safari</h3>
+                        <p class="text-gray-600 mb-4">Discover unique wildlife and rich cultural heritage in northern Kenya.</p>
+                        <a href="/itineraries/samburu.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1505142468610-359eebb1d10e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Lake Nakuru Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            2 Days / 1 Night
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lake Nakuru Flamingos</h3>
+                        <p class="text-gray-600 mb-4">Marvel at the pink spectacle of thousands of flamingos at this alkaline lake.</p>
+                        <a href="/itineraries/lake-nakuru.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1533415648777-407b626eb0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Tsavo Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            6 Days / 5 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tsavo Wilderness Expedition</h3>
+                        <p class="text-gray-600 mb-4">Explore Kenya's largest national park with its famous "red elephants".</p>
+                        <a href="/itineraries/tsavo.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Package 6 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                             alt="Luxury Safari" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-forest-green text-white text-sm font-bold px-3 py-1 rounded">
+                            7 Days / 6 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kenya Luxury Safari</h3>
+                        <p class="text-gray-600 mb-4">Experience the ultimate in comfort and wildlife viewing at premium lodges.</p>
+                        <a href="/itineraries/luxury-safari.html" class="inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                            View Itinerary
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Safari Deals Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold text-center text-forest-green mb-12">Hot Safari Deals</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Deal 1 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-earthy-beige">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                             alt="Maasai Mara Special" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+                            SPECIAL: 3 Days / 2 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 line-through">$1,200</span>
+                            <span class="text-xl font-bold text-forest-green">$1,020</span>
+                        </div>
+                        <a href="/itineraries/maasai-mara-special.html" class="mt-4 inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300 w-full text-center">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Deal 2 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-earthy-beige">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                             alt="Family Safari Package" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+                            FAMILY: 5 Days / 4 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Family Safari Package</h3>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">Kids FREE</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Special rates for families with children under 12.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 line-through">$2,800</span>
+                            <span class="text-xl font-bold text-forest-green">$2,400</span>
+                        </div>
+                        <a href="/itineraries/family-safari.html" class="mt-4 inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300 w-full text-center">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Deal 3 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-earthy-beige">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" 
+                             alt="Honeymoon Special" 
+                             class="w-full h-full object-cover package-image">
+                        <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+                            ROMANCE: 7 Days / 6 Nights
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Honeymoon Special</h3>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">Complimentary Upgrade</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Romantic safari with private guides and luxury accommodations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 line-through">$3,500</span>
+                            <span class="text-xl font-bold text-forest-green">$3,200</span>
+                        </div>
+                        <a href="/itineraries/honeymoon-special.html" class="mt-4 inline-block bg-forest-green hover:bg-green-900 text-white font-medium py-2 px-6 rounded-full transition duration-300 w-full text-center">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-forest-green text-white py-12 px-4 md:px-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-earthy-beige">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-earthy-beige transition duration-300">Home</a></li>
+                        <li><a href="#" class="hover:text-earthy-beige transition duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-earthy-beige transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-earthy-beige transition duration-300">Safaris</a></li>
+                        <li><a href="#" class="hover:text-earthy-beige transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Follow Us -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-earthy-beige">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-earthy-beige transition duration-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-earthy-beige transition duration-300"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-2xl hover:text-earthy-beige transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-earthy-beige transition duration-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-earthy-beige transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Contact Us -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-earthy-beige">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-earthy-beige"></i>
+                            <span>info@rimaafricasafaris.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-earthy-beige"></i>
+                            <span>+254 712 345 678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-earthy-beige"></i>
+                            <span>+254 712 345 678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
+                <div class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+                    <a href="#" class="hover:text-white transition duration-300">Terms and Conditions</a>
+                    <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                    <span>Copyright © 2025 Rima Africa Safaris. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

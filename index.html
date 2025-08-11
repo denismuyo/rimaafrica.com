@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rima Africa Safaris | Luxury African Safari Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #0C2E14;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(12, 46, 20, 0.7), rgba(12, 46, 20, 0.3));
+        }
+        
+        .btn-primary {
+            background-color: #0C2E14;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a4a24;
+            transform: translateY(-2px);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-item {
+            transition: opacity 0.5s ease;
+        }
+        
+        .carousel-item.hidden {
+            display: none;
+            opacity: 0;
+        }
+        
+        .carousel-item.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .newsletter-overlay {
+            background: linear-gradient(to right, rgba(12, 46, 20, 0.7), rgba(12, 46, 20, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-[#D7CEA1]">
+    <!-- Header -->
+    <header class="py-6">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+                <p class="text-sm md:text-base mt-2">Journey into the Heart of Africa</p>
+            </div>
+            
+            <nav class="mt-8">
+                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+                    <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+                    <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+  <!-- Slides Wrapper -->
+  <div id="slider" class="absolute inset-0 w-full h-full">
+    <!-- Slides (you can replace image URLs & text below) -->
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari8.jpg');"
+         data-caption="Discover the Wild Beauty of Africa with Rima Africa Safaris"></div>
+
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari2.jpg');"
+         data-caption="Fly Over the Maasai Mara in Style & Comfort"></div>
+
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari3.jpeg');"
+         data-caption="Unforgettable Bush Dinners & Wildlife Moments"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari4.jpeg');"
+         data-caption="Witness the Majestic Big Five in the Heart of Maasai Mara"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari5.jpg');"
+         data-caption="Sunset Game Drives through Africa’s Most Iconic Wilderness"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari1.jpg');"
+         data-caption="Luxury Safari Tents with Views of the Wild—Only in Kenya"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari7.jpeg');"
+         data-caption="Your Bucket List Safari Adventure Begins with Rima Africa"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari6.jpg');"
+         data-caption="Great Migration Safari—See Over a Million Wildebeest in Motion"></div>
+
+    <!-- Add up to 6 slides this same way -->
+  </div>
+
+  <!-- Text and CTA Overlay -->
+  <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+    <div class="max-w-3xl">
+      <h2 id="slider-text" class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 transition duration-500">
+        Discover the Wild Beauty of Africa with Rima Africa Safaris
+      </h2>
+      <button onclick="window.location.href='allpackages.html' " class="bg-[#D7CEA1] text-[#0C2E14] px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition">
+        Explore Safaris
+      </button>
+    </div>
+  </div>
+
+  <!-- JS for automatic slide -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const text = document.getElementById('slider-text');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+      });
+      text.textContent = slides[index].getAttribute('data-caption');
+    }
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 3000); // 3 seconds
+  </script>
+</section>
+
+
+    <!-- Why Travel with Rima -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Travel with Rima</h2>
+                <p class="text-lg">Experience Africa's wilderness with our expert guides, luxurious accommodations, and carefully curated itineraries that showcase the continent's most breathtaking landscapes and wildlife.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl">🎯</span>
+                            <div>
+                                <h3 class="font-bold text-lg">Expert Guides</h3>
+                                <p>Our knowledgeable guides have over 15 years of experience navigating Africa's diverse ecosystems.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl">🧭</span>
+                            <div>
+                                <h3 class="font-bold text-lg">Tailored Itineraries</h3>
+                                <p>Customized journeys designed to match your interests, pace, and travel style.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl">🛎️</span>
+                            <div>
+                                <h3 class="font-bold text-lg">Luxury Accommodations</h3>
+                                <p>Stay in handpicked lodges and camps that combine comfort with authentic safari experiences.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl">🌍</span>
+                            <div>
+                                <h3 class="font-bold text-lg">Sustainable Tourism</h3>
+                                <p>We're committed to responsible travel that supports local communities and conservation efforts.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8">
+                        <button onclick="window.location.href='allpackages.html'"  class="btn-primary px-8 py-3 rounded-full font-medium">Explore Safaris</button>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <img src="images/safari6.jpg" alt="African wildlife" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Safari Packages -->
+    <section class="py-16 bg-[url('images/safari5.jpg')] bg-cover bg-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Top Safari Packages</h2>
+                <p class="text-lg text-white">Choose from our most popular safari experiences across Africa's iconic destinations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">3 Days / 2 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Maasai Mara</h3>
+                        <p class="text-gray-700">Witness the Great Migration in Kenya's most famous wildlife reserve.</p>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">5 Days / 4 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Serengeti</h3>
+                        <p class="text-gray-700">Explore Tanzania's vast plains teeming with wildlife all year round.</p>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">4 Days / 3 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Okavango Delta</h3>
+                        <p class="text-gray-700">Mokoro canoe safaris in Botswana's unique inland delta ecosystem.</p>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">6 Days / 5 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Kruger National Park</h3>
+                        <p class="text-gray-700">South Africa's premier safari destination with exceptional game viewing.</p>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">3 Days / 2 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Bwindi Impenetrable</h3>
+                        <p class="text-gray-700">Gorilla trekking in Uganda's misty mountain forests.</p>
+                    </div>
+                </div>
+                
+                <!-- Package 6 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">4 Days / 3 Nights</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Etosha National Park</h3>
+                        <p class="text-gray-700">Namibia's wildlife haven centered around a massive salt pan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+  <div style="width: max-content; color: white; background-color: #0C2E14; padding: 20px; text-align: center; border-radius: 5px;">
+    <a href="allpackages.html" style="color: white; text-decoration: none; font-weight: bold;">VIEW ALL PACKAGES</a>
+  </div>
+</div>
+    </section>
+
+    <!-- Safari Snaps -->
+    <section class="py-16 bg-[#D7CEA1]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Safari Snaps</h2>
+                <p class="text-lg">Glimpses from our travelers' unforgettable experiences</p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Carousel Items -->
+                <div class="carousel-item active relative rounded-lg overflow-hidden">
+                    <img src="images/safari6.jpg" alt="Lake Naivasha" class="w-full h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-2xl font-bold text-white">Lake Naivasha</h3>
+                    </div>
+                </div>
+                
+                <div class="carousel-item hidden relative rounded-lg overflow-hidden">
+                    <img src="images/safari1.jpg" alt="Serengeti Plains" class="w-full h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-2xl font-bold text-white">Serengeti Plains</h3>
+                    </div>
+                </div>
+                
+                <div class="carousel-item hidden relative rounded-lg overflow-hidden">
+                    <img src="images/safari2.jpg" alt="Maasai Mara" class="w-full h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-2xl font-bold text-white">Maasai Mara</h3>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition">
+                    <i class="fas fa-chevron-left text-[#0C2E14] text-xl"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition">
+                    <i class="fas fa-chevron-right text-[#0C2E14] text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter & Offers -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center bg-[#D7CEA1] rounded-lg overflow-hidden">
+                <div class="lg:w-1/2 relative">
+                    <img src="images/safari6.jpg" alt="Safari" class="w-full h-full min-h-[300px] object-cover">
+                    <div class="absolute inset-0 newsletter-overlay flex items-center justify-center p-8 text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white">Get Exclusive Safari Offers & Travel Tips</h3>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 p-8 lg:p-12">
+                    <h3 class="text-2xl font-bold mb-4">Join Our Newsletter</h3>
+                    <p class="mb-6">Subscribe to receive updates on special safari deals, travel inspiration, and conservation news.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0C2E14]">
+                        <button type="submit" class="btn-primary px-6 py-3 rounded-lg font-medium whitespace-nowrap">Sign Up</button>
+                    </form>
+                    
+                    <p class="text-sm mt-4 text-gray-600">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Testimonial Section-->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-center text-green-900 mb-12">What Our Guests Say</h2>
+
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Testimonial Slider -->
+      <div class="overflow-hidden">
+        <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+          <!-- Testimonial 1 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="flex items-center mb-6">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-16 h-16 rounded-full object-cover mr-4">
+                <div>
+                  <h4 class="text-lg font-bold">Sarah J.</h4>
+                  <p class="text-yellow-800">New York, USA</p>
+                </div>
+              </div>
+              <div class="text-gray-700 mb-4">
+                <i class="fas fa-quote-left text-yellow-600 mr-2"></i>
+                Our Maasai Mara safari was beyond incredible! Every moment was perfect. We'll definitely be booking with Rima Africa again.
+                <i class="fas fa-quote-right text-yellow-600 ml-2"></i>
+              </div>
+              <div class="flex text-yellow-600">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="flex items-center mb-6">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-16 h-16 rounded-full object-cover mr-4">
+                <div>
+                  <h4 class="text-lg font-bold">Michael T.</h4>
+                  <p class="text-yellow-800">London, UK</p>
+                </div>
+              </div>
+              <div class="text-gray-700 mb-4">
+                <i class="fas fa-quote-left text-yellow-600 mr-2"></i>
+                Seeing elephants with Kilimanjaro in the background was a dream come true. The staff went above and beyond.
+                <i class="fas fa-quote-right text-yellow-600 ml-2"></i>
+              </div>
+              <div class="flex text-yellow-600">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="flex items-center mb-6">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma L." class="w-16 h-16 rounded-full object-cover mr-4">
+                <div>
+                  <h4 class="text-lg font-bold">Emma L.</h4>
+                  <p class="text-yellow-800">Sydney, Australia</p>
+                </div>
+              </div>
+              <div class="text-gray-700 mb-4">
+                <i class="fas fa-quote-left text-yellow-600 mr-2"></i>
+                The guides were so patient and knowledgeable with our kids. Can’t recommend Rima enough for family safaris!
+                <i class="fas fa-quote-right text-yellow-600 ml-2"></i>
+              </div>
+              <div class="flex text-yellow-600">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="flex items-center mb-6">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos M." class="w-16 h-16 rounded-full object-cover mr-4">
+                <div>
+                  <h4 class="text-lg font-bold">Carlos M.</h4>
+                  <p class="text-yellow-800">Madrid, Spain</p>
+                </div>
+              </div>
+              <div class="text-gray-700 mb-4">
+                <i class="fas fa-quote-left text-yellow-600 mr-2"></i>
+                I’ve done safaris before but Rima was something else. We saw the Big Five and stayed in stunning lodges. Unforgettable!
+                <i class="fas fa-quote-right text-yellow-600 ml-2"></i>
+              </div>
+              <div class="flex text-yellow-600">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="flex items-center mb-6">
+                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Lina W." class="w-16 h-16 rounded-full object-cover mr-4">
+                <div>
+                  <h4 class="text-lg font-bold">Lina W.</h4>
+                  <p class="text-yellow-800">Berlin, Germany</p>
+                </div>
+              </div>
+              <div class="text-gray-700 mb-4">
+                <i class="fas fa-quote-left text-yellow-600 mr-2"></i>
+                From airport pickup to the farewell dinner — everything was seamless. Highly recommend Rima for couples!
+                <i class="fas fa-quote-right text-yellow-600 ml-2"></i>
+              </div>
+              <div class="flex text-yellow-600">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="flex justify-center mt-8 space-x-4 z-10 relative">
+        <button id="prev-testimonial" class="w-10 h-10 rounded-full bg-green-900 text-white shadow-lg hover:bg-green-800 transition flex items-center justify-center">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="next-testimonial" class="w-10 h-10 rounded-full bg-green-900 text-white shadow-lg hover:bg-green-800 transition flex items-center justify-center">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.getElementById('testimonial-slider');
+      const testimonials = document.querySelectorAll('#testimonial-slider > div');
+      const prevBtn = document.getElementById('prev-testimonial');
+      const nextBtn = document.getElementById('next-testimonial');
+
+      let currentIndex = 0;
+      const total = testimonials.length;
+
+      function updateSlider() {
+        const offset = -currentIndex * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : total - 1;
+        updateSlider();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = currentIndex < total - 1 ? currentIndex + 1 : 0;
+        updateSlider();
+      });
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % total;
+        updateSlider();
+      }, 5000);
+    });
+  </script>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#0C2E14] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-[#D7CEA1] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#D7CEA1] transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-[#D7CEA1] transition">Contact Us</a></li>
+                        <li><a href="allpackages.html" class="hover:text-[#D7CEA1] transition">Safaris</a></li>
+                        <li><a href="blog.html" class="hover:text-[#D7CEA1] transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.facebook.com/rimaafricasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@rimasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rima-africa-safaris-42537b32b/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rima_africa_safaris/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-x"></i>
+                        </a>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                          <i class="fas fa-envelope"></i>
+                        <a href="mailto:safaris@rimaafrica.com" class="hover:underline">safaris@rimaafrica.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+254714728554" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/254714728554" target="_blank" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Rima Africa Safaris</h3>
+                    <p class="mb-4">We are a premier safari company offering luxury wildlife experiences across East and Southern Africa, committed to sustainable tourism and unforgettable adventures.</p>
+                    <img src="images/logo.png" alt="Rima Africa Safaris" class="h-12">
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-12 pt-6 text-center text-sm">
+                <p>Terms and Conditions | Privacy Policy | Copyright © 2025 Rima Africa Safaris. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize first slide
+        showSlide(currentSlide);
+
+        // Assign navigation buttons
+        document.querySelector('[onclick="nextSlide()"]').addEventListener('click', nextSlide);
+        document.querySelector('[onclick="prevSlide()"]').addEventListener('click', prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    });
+</script>
+
+</body>
+</html>

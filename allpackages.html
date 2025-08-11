@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rima Africa Safaris | Luxury African Safari Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #0C2E14;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(12, 46, 20, 0.7), rgba(12, 46, 20, 0.3));
+        }
+        
+        .btn-primary {
+            background-color: #0C2E14;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a4a24;
+            transform: translateY(-2px);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-item {
+            transition: opacity 0.5s ease;
+        }
+        
+        .carousel-item.hidden {
+            display: none;
+            opacity: 0;
+        }
+        
+        .carousel-item.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .newsletter-overlay {
+            background: linear-gradient(to right, rgba(12, 46, 20, 0.7), rgba(12, 46, 20, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-[#D7CEA1]">
+    <!-- Header -->
+    <header class="py-6">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+                <p class="text-sm md:text-base mt-2">Journey into the Heart of Africa</p>
+            </div>
+            
+            <nav class="mt-8">
+                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+                    <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+                    <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+  <!-- Slides Wrapper -->
+  <div id="slider" class="absolute inset-0 w-full h-full">
+    <!-- Slides (you can replace image URLs & text below) -->
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari8.jpg');"
+         data-caption="Discover the Wild Beauty of Africa with Rima Africa Safaris"></div>
+
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari2.jpg');"
+         data-caption="Fly Over the Maasai Mara in Style & Comfort"></div>
+
+    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari3.jpeg');"
+         data-caption="Unforgettable Bush Dinners & Wildlife Moments"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari4.jpeg');"
+         data-caption="Witness the Majestic Big Five in the Heart of Maasai Mara"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari5.jpg');"
+         data-caption="Sunset Game Drives through Africa’s Most Iconic Wilderness"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari1.jpg');"
+         data-caption="Luxury Safari Tents with Views of the Wild—Only in Kenya"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari7.jpeg');"
+         data-caption="Your Bucket List Safari Adventure Begins with Rima Africa"></div>
+
+         <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+         style="background-image: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(215, 206, 161, 0.2)), url('images/safari6.jpg');"
+         data-caption="Great Migration Safari—See Over a Million Wildebeest in Motion"></div>
+
+    <!-- Add up to 6 slides this same way -->
+  </div>
+
+  <!-- Text and CTA Overlay -->
+  <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+    <div class="max-w-3xl">
+      <h2 id="slider-text" class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 transition duration-500">
+        Discover the Wild Beauty of Africa with Rima Africa Safaris
+      </h2>
+      
+    </div>
+  </div>
+
+  <!-- JS for automatic slide -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const text = document.getElementById('slider-text');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+      });
+      text.textContent = slides[index].getAttribute('data-caption');
+    }
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 3000); // 3 seconds
+  </script>
+</section>
+
+
+    <!-- Why Travel with Rima -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About our Packages</h2>
+                <p class="text-lg">                Discover unforgettable safari adventures crafted by local experts. Whether you're looking for a romantic escape, family adventure, or luxury wildlife tour, Rima Africa Safaris offers a variety of tailored packages to suit every traveler's dream. Explore Kenya's iconic destinations—from the vast plains of Maasai Mara to the shadow of Mount Kilimanjaro in Amboseli and the unique culture of Samburu.
+</p>
+            </div>
+        </section>
+            
+<!-- Bullet Guide Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Left Column - Bullet Points -->
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-forest-green mb-6">How to Book Your Safari</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">✅</span>
+                            <span class="text-gray-700">Click on your preferred safari package to view details.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📥</span>
+                            <span class="text-gray-700">Download the full itinerary – includes day-by-day schedule and all pricing.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📝</span>
+                            <span class="text-gray-700">Book by filling out our easy online booking form.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earthy-beige text-2xl mr-4">📞</span>
+                            <span class="text-gray-700">Our team will reach out within 12 hours to confirm and finalize your adventure!</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right Column - Image -->
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                         alt="Wildebeest migration" 
+                         class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Safari Packages Section -->
+    <section id="packages" class="py-16 savannah-bg">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold text-center text-forest-green mb-12">All Safari Packages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Package 2 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Package 3 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Package 4 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Package 5 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Package 6 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
+      3 Days / 2 Nights
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <a href="maasai-mara.html"
+      class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      View Itinerary
+    </a>
+  </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Safari Deals Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold text-center text-forest-green mb-12">Hot Safari Deals</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Deal 1 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+         alt="Maasai Mara Special" 
+         class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+      SPECIAL: 3 Days / 2 Nights
+    </div>
+  </div>
+
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+    </div>
+
+    <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
+
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-gray-500 line-through">$1,200</span>
+      <span class="text-xl font-bold text-green-900">$1,020</span>
+    </div>
+
+    <a href="maasai-mara-special.html"
+       class="inline-block w-full text-center bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      Book Now
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Deal 2 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+         alt="Maasai Mara Special" 
+         class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+      SPECIAL: 3 Days / 2 Nights
+    </div>
+  </div>
+
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+    </div>
+
+    <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
+
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-gray-500 line-through">$1,200</span>
+      <span class="text-xl font-bold text-green-900">$1,020</span>
+    </div>
+
+    <a href="maasai-mara-special.html"
+       class="inline-block w-full text-center bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      Book Now
+    </a>
+  </div>
+</div>
+
+                
+                <!-- Deal 3 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
+  <div class="relative overflow-hidden h-64">
+    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+         alt="Maasai Mara Special" 
+         class="w-full h-full object-cover package-image">
+    <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
+      SPECIAL: 3 Days / 2 Nights
+    </div>
+  </div>
+
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+    </div>
+
+    <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
+
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-gray-500 line-through">$1,200</span>
+      <span class="text-xl font-bold text-green-900">$1,020</span>
+    </div>
+
+    <a href="maasai-mara-special.html"
+       class="inline-block w-full text-center bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+      Book Now
+    </a>
+  </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+            <!--Delete from here upto footer-->
+
+            
+
+    <!-- Footer -->
+    <footer class="bg-[#0C2E14] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-[#D7CEA1] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#D7CEA1] transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-[#D7CEA1] transition">Contact Us</a></li>
+                        <li><a href="allpackages.html" class="hover:text-[#D7CEA1] transition">Safaris</a></li>
+                        <li><a href="blog.html" class="hover:text-[#D7CEA1] transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.facebook.com/rimaafricasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@rimasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rima-africa-safaris-42537b32b/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rima_africa_safaris/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-x"></i>
+                        </a>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                          <i class="fas fa-envelope"></i>
+                        <a href="mailto:safaris@rimaafrica.com" class="hover:underline">safaris@rimaafrica.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+254714728554" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/254714728554" target="_blank" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Rima Africa Safaris</h3>
+                    <p class="mb-4">We are a premier safari company offering luxury wildlife experiences across East and Southern Africa, committed to sustainable tourism and unforgettable adventures.</p>
+                    <img src="images/logo.png" alt="Rima Africa Safaris" class="h-12">
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-12 pt-6 text-center text-sm">
+                <p>Terms and Conditions | Privacy Policy | Copyright © 2025 Rima Africa Safaris. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.add('hidden');
+                    slide.classList.remove('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
