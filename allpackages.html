@@ -60,25 +60,62 @@
 </head>
 <body class="bg-[#D7CEA1]">
     <!-- Header -->
-    <header class="py-6">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
-                <p class="text-sm md:text-base mt-2">Journey into the Heart of Africa</p>
-            </div>
-            
-            <nav class="mt-8">
-                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
-                    <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
-                    <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
-                    <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
-                    <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
-                    <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="sticky top-0 z-50 bg-[#D7CEA1] shadow-md">
+  <div class="container mx-auto px-4 flex items-center justify-between py-4">
+    
+    <!-- Logo & Brand Name with Link -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Rima Africa Safaris" class="h-16 w-auto">
+      <div>
+        <h1 class="text-lg md:text-2xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+        <p class="text-xs md:text-sm">Safaris that Speak Africa</p>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 lg:gap-10">
+        <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+        <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+        <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+        <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+        <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+        <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+        <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-[#0C2E14] text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-[#D7CEA1] border-t border-[#0C2E14]/20">
+    <ul class="flex flex-col items-center py-4 space-y-3">
+      <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+      <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+      <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+      <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+      <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+      <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+      <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- JS for Mobile Menu Toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</header>
 
     <!-- Hero Section -->
    <section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
@@ -207,7 +244,7 @@
                 <!-- Package 1 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    <img src="images/safari6.jpg"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
       3 Days / 2 Nights
@@ -230,12 +267,12 @@
     <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
-      3 Days / 2 Nights
+      5 Days / 4 Nights
     </div>
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
-    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Serengeti Adventure</h3>
+    <p class="text-gray-600 mb-4"> Explore Tanzania's vast plains teeming with wildlife all year round.</p>
     <a href="maasai-mara.html"
       class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
       View Itinerary
@@ -247,15 +284,15 @@
                 <!-- Package 3 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    <img src="images/diani.jpg"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
       3 Days / 2 Nights
     </div>
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
-    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Diani Beach Vacation Adventure</h3>
+    <p class="text-gray-600 mb-4">Experience a Blissful getaway vacation in sunny sandy beaches</p>
     <a href="maasai-mara.html"
       class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
       View Itinerary
@@ -267,15 +304,15 @@
                 <!-- Package 4 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    <img src="images/samburu.jpg"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
-      3 Days / 2 Nights
+      8 Days Safari in Kenya
     </div>
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
-    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Amboseli, Naivasha and Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4"> Exceptional 8 days in Kenya to visit the most amazing safaris</p>
     <a href="maasai-mara.html"
       class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
       View Itinerary
@@ -287,15 +324,15 @@
                 <!-- Package 5 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    <img src="images/mtkenya.jpg"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
-      3 Days / 2 Nights
+      8 Days Safari in Samburu and Central Circuit
     </div>
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
-    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Samburu, Mt. Kenya, Lake Nakuru and Maasai Mara Adventure</h3>
+    <p class="text-gray-600 mb-4">Visit the most amazing safari destinations in Kenya</p>
     <a href="maasai-mara.html"
       class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
       View Itinerary
@@ -307,15 +344,15 @@
                 <!-- Package 6 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    <img src="images/lakenakuru.jpg"
       alt="Maasai Mara Safari" class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-green-900 text-white text-sm font-bold px-3 py-1 rounded">
-      3 Days / 2 Nights
+      8 Days Safari in Kenya
     </div>
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Maasai Mara Adventure</h3>
-    <p class="text-gray-600 mb-4">Experience the great wildebeest migration in one of Africa's most famous reserves.</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Amboseli, Maasai Mara, Lake Naivasha Adventure</h3>
+    <p class="text-gray-600 mb-4">Embark on an epic 8-day Kenya safari that promises to dazzle you with the finest wildlife experiences in the country!</p>
     <a href="maasai-mara.html"
       class="inline-block bg-green-900 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-full transition duration-300">
       View Itinerary
@@ -336,7 +373,7 @@
                 <!-- Deal 1 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+    <img src="images/safari6.jpg" 
          alt="Maasai Mara Special" 
          class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
@@ -347,7 +384,7 @@
   <div class="p-6">
     <div class="flex justify-between items-start mb-2">
       <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
-      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">25% OFF</span>
     </div>
 
     <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
@@ -368,18 +405,18 @@
                 <!-- Deal 2 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+    <img src="images/ecolodges.jpg" 
          alt="Maasai Mara Special" 
          class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
-      SPECIAL: 3 Days / 2 Nights
+      SPECIAL: 7 Days / 6 Nights
     </div>
   </div>
 
   <div class="p-6">
     <div class="flex justify-between items-start mb-2">
-      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
-      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
+      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special + Culture Experience</h3>
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">HOTEL UPGRADE</span>
     </div>
 
     <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
@@ -400,7 +437,7 @@
                 <!-- Deal 3 -->
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border-2 border-yellow-200">
   <div class="relative overflow-hidden h-64">
-    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+    <img src="images/diani.jpg" 
          alt="Maasai Mara Special" 
          class="w-full h-full object-cover package-image">
     <div class="absolute bottom-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">
@@ -410,11 +447,11 @@
 
   <div class="p-6">
     <div class="flex justify-between items-start mb-2">
-      <h3 class="text-xl font-bold text-gray-800">Maasai Mara Special</h3>
+      <h3 class="text-xl font-bold text-gray-800">Malindi Beach  Special</h3>
       <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">15% OFF</span>
     </div>
 
-    <p class="text-gray-600 mb-4">Limited time offer for the great migration season.</p>
+    <p class="text-gray-600 mb-4">Limited time offer for the great summer season.</p>
 
     <div class="flex justify-between items-center mb-4">
       <span class="text-gray-500 line-through">$1,200</span>
@@ -433,7 +470,6 @@
     </section>
 
 
-            <!--Delete from here upto footer-->
 
             
 

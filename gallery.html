@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Rima Africa Safaris - Luxury African Safari Tours</title>
+    <meta name="description" content="Immerse yourself in breathtaking safari moments from Kenya and East Africa. Explore our gallery of wildlife, landscapes, and luxury safari experiences.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        :root {
+            --sand-beige: #F4E8C1;
+            --forest-green: #0C2E14;
+            --terracotta: #E2725B;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--forest-green);
+            background-color: var(--sand-beige);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+            background-size: cover;
+            background-position: center;
+            animation: kenburns 20s infinite alternate;
+        }
+        
+        @keyframes kenburns {
+            0% { background-position: center; background-size: 100%; }
+            100% { background-position: 20% 30%; background-size: 110%; }
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(12, 46, 20, 0.6), rgba(12, 46, 20, 0.8));
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 46, 20, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .gallery-caption {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(10px);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 46, 20, 0.95);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+        }
+        
+        .map-region {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .map-region:hover {
+            fill: var(--terracotta);
+        }
+        
+        .map-region.active {
+            fill: var(--terracotta);
+        }
+        
+        .seasonal-slide {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .seasonal-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .seasonal-slide.next {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        
+        .seasonal-slide.prev {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        
+        .book-now-btn {
+            background-color: var(--terracotta);
+            transition: all 0.3s ease;
+        }
+        
+        .book-now-btn:hover {
+            background-color: #d15c44;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-[#F4E8C1] text-[#0C2E14]">
+   
+
+    <!-- Hero Section -->
+    <section class="hero relative h-screen w-full flex items-center justify-center">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4">Step Into the Wild</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">A visual journey through Africa's most breathtaking landscapes.</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <span class="text-white text-lg animate-bounce">Scroll to Explore ↓</span>
+        </div>
+    </section>
+
+    <!-- Seasonal Highlights -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-[#0C2E14] text-[#F4E8C1]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Seasonal Safari Highlights</h2>
+            
+            <div class="relative overflow-hidden h-96 md:h-[500px] rounded-lg">
+                <!-- Slides -->
+                <div class="seasonal-slider-container relative h-full">
+                    <div class="seasonal-slide active absolute inset-0 bg-cover bg-center flex items-end" style="background-image: url('images/safari7.jpeg');">
+                        <div class="bg-black bg-opacity-60 p-6 w-full">
+                            <h3 class="text-2xl md:text-3xl font-bold">Great Migration</h3>
+                            <p class="mt-2">Witness the awe-inspiring spectacle of over 1.5 million wildebeest crossing the Mara River (July-October)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-slide absolute inset-0 bg-cover bg-center flex items-end" style="background-image: url('images/lakenakuru.jpg');">
+                        <div class="bg-black bg-opacity-60 p-6 w-full">
+                            <h3 class="text-2xl md:text-3xl font-bold">Flamingo Season</h3>
+                            <p class="mt-2">Lake Nakuru transforms into a pink wonderland with thousands of flamingos (November-March)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-slide absolute inset-0 bg-cover bg-center flex items-end" style="background-image: url('images/salt.jpg');">
+                        <div class="bg-black bg-opacity-60 p-6 w-full">
+                            <h3 class="text-2xl md:text-3xl font-bold">Elephant Gathering</h3>
+                            <p class="mt-2">Amboseli's dry season brings hundreds of elephants to the swamps (June-October)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-slide absolute inset-0 bg-cover bg-center flex items-end" style="background-image: url('images/bird.jpg');">
+                        <div class="bg-black bg-opacity-60 p-6 w-full">
+                            <h3 class="text-2xl md:text-3xl font-bold">Bird Migration</h3>
+                            <p class="mt-2">Over 100 species of migratory birds visit Kenya's wetlands (October-April)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="seasonal-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="seasonal-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Filter -->
+    <section class="py-12 px-4 md:px-8 lg:px-16 bg-[#F4E8C1]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Explore Our Safari Destinations</h2>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+                <div class="w-full md:w-1/2">
+                    <svg viewBox="0 0 400 400" class="w-full h-auto max-h-[400px]">
+                        <!-- Simplified Kenya map with clickable regions -->
+                        <path class="map-region" data-region="all" fill="#3a5a40" d="M200,50 L250,80 L300,60 L350,100 L320,150 L280,180 L250,220 L200,250 L150,220 L120,180 L80,150 L50,100 L100,60 L150,80 Z" />
+                        <circle class="map-region active" data-region="masai-mara" cx="250" cy="150" r="30" fill="#588157" />
+                        <circle class="map-region" data-region="amboseli" cx="180" cy="220" r="25" fill="#588157" />
+                        <circle class="map-region" data-region="tsavo" cx="280" cy="200" r="35" fill="#588157" />
+                        <circle class="map-region" data-region="samburu" cx="150" cy="120" r="25" fill="#588157" />
+                        <circle class="map-region" data-region="diani" cx="220" cy="280" r="20" fill="#588157" />
+                        
+                        <text x="250" y="150" font-size="12" text-anchor="middle" fill="white">Maasai Mara</text>
+                        <text x="180" y="220" font-size="10" text-anchor="middle" fill="white">Amboseli</text>
+                        <text x="280" y="200" font-size="12" text-anchor="middle" fill="white">Tsavo</text>
+                        <text x="150" y="120" font-size="10" text-anchor="middle" fill="white">Samburu</text>
+                        <text x="220" y="280" font-size="8" text-anchor="middle" fill="white">Diani</text>
+                    </svg>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button class="filter-btn active px-4 py-2 rounded-full bg-[#0C2E14] text-white" data-filter="all">All Locations</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-[#588157] text-white" data-filter="masai-mara">Maasai Mara</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-[#588157] text-white" data-filter="amboseli">Amboseli</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-[#588157] text-white" data-filter="tsavo">Tsavo</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-[#588157] text-white" data-filter="samburu">Samburu</button>
+                        <button class="filter-btn px-4 py-2 rounded-full bg-[#588157] text-white" data-filter="diani">Diani Beach</button>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-3" id="location-title">All Safari Locations</h3>
+                        <p id="location-description">Explore our diverse collection of safari moments from across Kenya's most iconic national parks and reserves. From the Great Migration in Maasai Mara to the elephant herds of Amboseli with Kilimanjaro views, each destination offers unique wildlife experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masonry Gallery -->
+    <section class="py-12 px-4 md:px-8 lg:px-16 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Safari Moments</h2>
+            
+            <div class="masonry-grid columns-1 md:columns-2 lg:columns-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="masai-mara">
+                    <img src="images/lioness.jpg" 
+                         alt="Lioness resting in golden grass at sunset in Maasai Mara" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Lioness at Sunset</h3>
+                        <p>Maasai Mara National Reserve, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="amboseli">
+                    <img src="images/salt.jpg" 
+                         alt="Elephant family walking with Mount Kilimanjaro in background at Amboseli" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Elephant Family</h3>
+                        <p>Amboseli National Park, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="tsavo">
+                    <img src="images/redelephant.jpg" 
+                         alt="Red elephants of Tsavo dust bathing in golden light" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Red Elephants</h3>
+                        <p>Tsavo East National Park, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="masai-mara">
+                    <img src="images/safari6.jpg" 
+                         alt="Wildebeest migration crossing the Mara River during golden hour" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Great Migration</h3>
+                        <p>Maasai Mara National Reserve, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="samburu">
+                    <img src="images/samburu.jpg" 
+                         alt="Reticulated giraffe feeding on acacia trees in Samburu" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Samburu Specials</h3>
+                        <p>Samburu National Reserve, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="diani">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80" 
+                         alt="White sandy beach with palm trees at Diani Beach" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Coastal Paradise</h3>
+                        <p>Diani Beach, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="amboseli">
+                    <img src="images/elephantfamily.jpg" 
+                         alt="Large herd of elephants at Amboseli swamps with Kilimanjaro" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Elephant Gathering</h3>
+                        <p>Amboseli National Park, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="masai-mara">
+                    <img src="images/cheetah.jpg" 
+                         alt="Cheetah mother with cubs on termite mound in Maasai Mara" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Cheetah Family</h3>
+                        <p>Maasai Mara National Reserve, Kenya</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item mb-6 relative overflow-hidden rounded-lg" data-location="tsavo">
+                    <img src="images/tsavolion.jpg" 
+                         alt="Lion resting on red Tsavo rocks during golden hour" 
+                         class="w-full h-auto object-cover">
+                    <div class="gallery-caption absolute bottom-0 left-0 right-0 p-4 text-white z-10">
+                        <h3 class="font-bold">Tsavo Lion</h3>
+                        <p>Tsavo West National Park, Kenya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="absolute top-4 right-4 z-20">
+            <button class="close-lightbox text-white text-3xl p-2 hover:text-[#E2725B]">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
+            <button class="lightbox-prev text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        
+        <div class="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
+            <button class="lightbox-next text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="container mx-auto h-full flex flex-col justify-center items-center p-4">
+            <div class="max-w-4xl w-full">
+                <img id="lightbox-image" src="" alt="" class="w-full h-auto max-h-[70vh] object-contain">
+                <div class="bg-white p-6 mt-4 rounded-lg">
+                    <h3 id="lightbox-title" class="text-xl font-bold mb-2"></h3>
+                    <p id="lightbox-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Now Button -->
+    <a href="allpackages.html" class="fixed bottom-6 right-6 book-now-btn text-white px-6 py-3 rounded-full shadow-lg z-50 flex items-center">
+        <span class="mr-2 font-bold">Book Now</span>
+        <i class="fas fa-arrow-right"></i>
+    </a>
+
+    <script>
+        // Seasonal Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.seasonal-slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev', 'next');
+                
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i === (index + 1) % totalSlides) {
+                    slide.classList.add('next');
+                } else if (i === (index - 1 + totalSlides) % totalSlides) {
+                    slide.classList.add('prev');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        document.querySelector('.seasonal-next').addEventListener('click', nextSlide);
+        document.querySelector('.seasonal-prev').addEventListener('click', prevSlide);
+        
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Map Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const mapRegions = document.querySelectorAll('.map-region');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        const locationData = {
+            'all': {
+                title: 'All Safari Locations',
+                description: 'Explore our diverse collection of safari moments from across Kenya\'s most iconic national parks and reserves. From the Great Migration in Maasai Mara to the elephant herds of Amboseli with Kilimanjaro views, each destination offers unique wildlife experiences.'
+            },
+            'masai-mara': {
+                title: 'Maasai Mara National Reserve',
+                description: 'World-famous for the Great Migration, the Mara offers spectacular big cat sightings year-round. Vast savannahs dotted with acacia trees provide the perfect backdrop for wildlife photography.'
+            },
+            'amboseli': {
+                title: 'Amboseli National Park',
+                description: 'Renowned for its large elephant herds with Mount Kilimanjaro as a dramatic backdrop. The park\'s swamps attract diverse wildlife and over 400 bird species.'
+            },
+            'tsavo': {
+                title: 'Tsavo National Parks',
+                description: 'Kenya\'s largest protected area divided into Tsavo East and West. Famous for its "red elephants", maneless lions, and dramatic volcanic landscapes including Mzima Springs.'
+            },
+            'samburu': {
+                title: 'Samburu National Reserve',
+                description: 'Home to the "Samburu Special Five" - reticulated giraffe, Grevy\'s zebra, Somali ostrich, gerenuk, and Beisa oryx. The Ewaso Nyiro River attracts diverse wildlife.'
+            },
+            'diani': {
+                title: 'Diani Beach',
+                description: 'Pristine white sand beaches with turquoise waters, perfect for relaxing after your safari. Enjoy water sports, coral reefs, and Swahili culture.'
+            }
+        };
+        
+        function filterGallery(filter) {
+            // Update active button
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update map regions
+            mapRegions.forEach(region => {
+                region.classList.remove('active');
+                if (region.dataset.region === filter) {
+                    region.classList.add('active');
+                }
+            });
+            
+            // Filter gallery items
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.dataset.location === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update location info
+            document.getElementById('location-title').textContent = locationData[filter].title;
+            document.getElementById('location-description').textContent = locationData[filter].description;
+        }
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterGallery(btn.dataset.filter);
+            });
+        });
+        
+        mapRegions.forEach(region => {
+            if (region.dataset.region) { // Only regions with data-region attribute
+                region.addEventListener('click', () => {
+                    filterGallery(region.dataset.region);
+                });
+            }
+        });
+        
+        // Lightbox
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDescription = document.getElementById('lightbox-description');
+        const closeLightboxBtn = document.querySelector('.close-lightbox');
+        const lightboxPrevBtn = document.querySelector('.lightbox-prev');
+        const lightboxNextBtn = document.querySelector('.lightbox-next');
+        
+        const galleryData = [
+            {
+                image: 'images/lioness.jpg',
+                title: 'Lioness at Sunset',
+                location: 'Maasai Mara National Reserve, Kenya',
+                description: 'This mature lioness was photographed during golden hour as she surveyed her territory. The Maasai Mara is home to over 3,000 lions, living in prides of up to 15 individuals. Did you know lionesses do most of the hunting for their pride?'
+            },
+            {
+                image: 'images/amboselielephant.jpg',
+                title: 'Elephant Family',
+                location: 'Amboseli National Park, Kenya',
+                description: 'A matriarch leads her family across the Amboseli plains with Mount Kilimanjaro in the background. Elephants have complex social structures and can live up to 70 years. The Amboseli elephants are some of the most studied in Africa, with some individuals being monitored for over 40 years.'
+            },
+            {
+                image: 'images/redelephant.jpg',
+                title: 'Red Elephants',
+                location: 'Tsavo East National Park, Kenya',
+                description: 'Tsavo\'s elephants get their distinctive red color from dust bathing in the park\'s red volcanic soil. This natural sunscreen protects their skin from sunburn and insect bites. Tsavo is home to Kenya\'s largest elephant population, with over 12,000 individuals.'
+            },
+            {
+                image: 'images/safari6.jpg',
+                title: 'Great Migration',
+                location: 'Maasai Mara National Reserve, Kenya',
+                description: 'Each year, over 1.5 million wildebeest, zebra and gazelle complete this circular 1,200-mile migration between Tanzania and Kenya. The dramatic Mara River crossings occur between July and October, where crocodiles await the herds. This is considered one of the "Seven New Wonders of the World".'
+            },
+            {
+                image: 'images/samburu.jpg',
+                title: 'Samburu Specials',
+                location: 'Samburu National Reserve, Kenya',
+                description: 'The reticulated giraffe is one of Samburu\'s "Special Five" - unique species found in northern Kenya. Their geometric coat pattern provides excellent camouflage in the acacia woodlands. Samburu is also home to rare desert-adapted elephants that can go days without water.'
+            },
+            {
+                image: 'images/diani.jpg',
+                title: 'Coastal Paradise',
+                location: 'Diani Beach, Kenya',
+                description: 'Diani Beach is consistently ranked among Africa\'s best beaches, with 17km of pristine white sand. The coral reef just offshore offers excellent snorkeling and diving opportunities. The area is also known for its resident colobus monkeys that live in the coastal forests.'
+            },
+            {
+                image: 'images/elephantfamily.jpg',
+                title: 'Elephant Gathering',
+                location: 'Amboseli National Park, Kenya',
+                description: 'During dry seasons, Amboseli\'s swamps become gathering points for hundreds of elephants. Researchers have identified over 1,500 individual elephants in the Amboseli ecosystem. The park provides one of the best places in Africa to observe elephant family interactions and social behaviors.'
+            },
+            {
+                image: 'images/cheetah.jpg',
+                title: 'Cheetah Family',
+                location: 'Maasai Mara National Reserve, Kenya',
+                description: 'Cheetah mothers raise their cubs alone, teaching them hunting skills for about 18 months. These cubs are about 6 months old - the age when they start accompanying their mother on hunts. The Mara is one of the best places to see cheetahs, with about 50 individuals in the ecosystem.'
+            },
+            {
+                image: 'images/tsavolion.jpg',
+                title: 'Tsavo Lion',
+                location: 'Tsavo West National Park, Kenya',
+                description: 'Tsavo lions are famous for their lack of manes, a possible adaptation to the hot, thorny environment. These lions are generally larger than their counterparts in other parks. The "Man-eaters of Tsavo" that terrorized railway workers in 1898 were responsible for at least 35 deaths.'
+            }
+        ];
+        
+        let currentLightboxIndex = 0;
+        
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            lightboxImage.src = galleryData[index].image;
+            lightboxImage.alt = galleryData[index].title;
+            lightboxTitle.textContent = galleryData[index].title;
+            lightboxDescription.textContent = `${galleryData[index].location} - ${galleryData[index].description}`;
+            
+            lightbox.style.display = 'block';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        
+        function prevLightbox() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
+            openLightbox(currentLightboxIndex);
+        }
+        
+        function nextLightbox() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
+            openLightbox(currentLightboxIndex);
+        }
+        
+        // Add click events to gallery items
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+        
+        closeLightboxBtn.addEventListener('click', closeLightbox);
+        lightboxPrevBtn.addEventListener('click', prevLightbox);
+        lightboxNextBtn.addEventListener('click', nextLightbox);
+        
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'block') {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    prevLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    nextLightbox();
+                }
+            }
+        });
+        
+        // Smooth scroll for hero arrow
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.seasonal-highlights').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+</body>
+</html>

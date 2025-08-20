@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Safari - Rima Africa Safaris</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -43,25 +45,62 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="py-6">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
-                <p class="text-sm md:text-base mt-2">Journey into the Heart of Africa</p>
-            </div>
-            
-            <nav class="mt-8">
-                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
-                    <li><a href="#" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="sticky top-0 z-50 bg-[#D7CEA1] shadow-md">
+  <div class="container mx-auto px-4 flex items-center justify-between py-4">
+    
+    <!-- Logo & Brand Name with Link -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Rima Africa Safaris" class="h-16 w-auto">
+      <div>
+        <h1 class="text-lg md:text-2xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+        <p class="text-xs md:text-sm">Safaris that Speak Africa</p>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 lg:gap-10">
+        <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+        <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+        <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+        <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+        <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+        <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+        <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-[#0C2E14] text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-[#D7CEA1] border-t border-[#0C2E14]/20">
+    <ul class="flex flex-col items-center py-4 space-y-3">
+      <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+      <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+      <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+      <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+      <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+      <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+      <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- JS for Mobile Menu Toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</header>
 
     <!-- Hero Section -->
     <div class="hero-bg h-64 md:h-96 flex items-center justify-center text-center text-white">
@@ -82,7 +121,7 @@
 
     <!-- Booking Form -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <form action="https://formspree.io/f/denisnzioka63@gmail.com" method="POST" class="bg-white shadow-md rounded-lg p-6 md:p-8">
+        <form action="https://formspree.io/f/mjkojzgp" method="POST" class="bg-white shadow-md rounded-lg p-6 md:p-8">
             <!-- Section 1: Tell Us About Yourself -->
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-safari-green border-b-2 border-safari-beige pb-2 mb-6">Tell Us About Yourself</h2>

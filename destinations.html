@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rima Africa Safaris | Destinations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(12, 46, 20, 0.3), rgba(12, 46, 20, 0.7));
+        }
+        .card-overlay {
+            background: linear-gradient(to top, rgba(12, 46, 20, 0.7), transparent);
+        }
+        .tab-active {
+            background-color: #0C2E14;
+            color: #D7CEA1;
+        }
+        .tab-inactive {
+            background-color: #D7CEA1;
+            color: #0C2E14;
+        }
+        .section {
+            transition: opacity 0.5s ease;
+        }
+        .destination-card {
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: scale(1.03);
+        }
+        .image-hover-effect {
+            transition: transform 0.5s ease;
+        }
+        .image-hover-effect:hover {
+            transform: scale(1.05);
+        }
+        .scrollable-tabs {
+            scrollbar-width: none;
+        }
+        .scrollable-tabs::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+<header class="sticky top-0 z-50 bg-[#D7CEA1] shadow-md">
+  <div class="container mx-auto px-4 flex items-center justify-between py-4">
+    
+    <!-- Logo & Brand Name with Link -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Rima Africa Safaris" class="h-16 w-auto">
+      <div>
+        <h1 class="text-lg md:text-2xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+        <p class="text-xs md:text-sm">Safaris that Speak Africa</p>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 lg:gap-10">
+        <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+        <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+        <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+        <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+        <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+        <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+        <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-[#0C2E14] text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-[#D7CEA1] border-t border-[#0C2E14]/20">
+    <ul class="flex flex-col items-center py-4 space-y-3">
+      <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+      <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+      <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+      <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+      <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+      <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+      <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- JS for Mobile Menu Toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</header>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-[url('images/tsavolion.jpg')] bg-cover bg-center hero-overlay"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">Discover Kenya's Premier Destinations</h1>
+            <p class="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto">From the wild savannahs to turquoise beaches, your journey begins here.</p>
+            
+            
+        </div>
+    </section>
+
+    <!-- Mobile Scrollable Tabs -->
+    <div class="md:hidden sticky top-0 z-20 bg-white shadow-md">
+        <div class="flex overflow-x-auto scrollable-tabs px-4 py-2 space-x-2">
+            <button onclick="showSection('safaris')" class="tab-active whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium">Safaris</button>
+            <button onclick="showSection('staycations')" class="tab-inactive whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium">Staycations</button>
+            <button onclick="showSection('beach')" class="tab-inactive whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium">Beach</button>
+            <button onclick="showSection('lakeside')" class="tab-inactive whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium">Lakeside</button>
+        </div>
+    </div>
+<!-- Navigation Tabs --> <br>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4">
+                <button onclick="showSection('safaris')" class="tab-active px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg playfair">Safaris</button>
+                <button onclick="showSection('staycations')" class="tab-inactive px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg playfair">Staycations</button>
+                <button onclick="showSection('beach')" class="tab-inactive px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg playfair">Beach Holidays</button>
+                <button onclick="showSection('lakeside')" class="tab-inactive px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg playfair">Lakeside</button>
+            </div>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12 md:py-20">
+
+        <!-- Safaris Section -->
+        <section id="safaris" class="section">
+            <!-- Hero Banner -->
+            <div class="relative h-64 md:h-96 mb-12 rounded-xl overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="playfair text-3xl md:text-5xl font-bold text-white mb-4">Signature Safari Destinations</h2>
+                        <p class="text-white text-lg md:text-xl max-w-3xl mx-auto">Experience Africa's wild beauty with our signature safari destinations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Maasai Mara -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/safari6.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Maasai Mara</h3>
+                        <p class="text-white mb-4">The world-famous wildlife reserve with the Great Migration.</p>
+                        <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Explore Packages</a>
+                    </div>
+                </div>
+
+                <!-- Samburu -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/samburu.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Samburu</h3>
+                        <p class="text-white mb-4">Home to unique wildlife species found north of the equator.</p>
+                        <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Explore Packages</a>
+                    </div>
+                </div>
+
+                <!-- Amboseli -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/amboselielephant.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Amboseli</h3>
+                        <p class="text-white mb-4">Iconic views of elephants with Mount Kilimanjaro backdrop.</p>
+                        <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Explore Packages</a>
+                    </div>
+                </div>
+
+                <!-- Tsavo East & West -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/tsavolion.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Tsavo East & West</h3>
+                        <p class="text-white mb-4">Kenya's largest national park with diverse landscapes.</p>
+                        <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Explore Packages</a>
+                    </div>
+                </div>
+
+                <!-- Laikipia -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/safari9.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Laikipia</h3>
+                        <p class="text-white mb-4">Private conservancies offering exclusive wildlife experiences.</p>
+                        <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Explore Packages</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-20 bg-[#0C2E14] rounded-xl p-12 text-center">
+                <h3 class="playfair text-3xl md:text-4xl font-bold text-[#D7CEA1] mb-6">Your dream safari begins here.</h3>
+                <p class="text-white text-xl mb-8 max-w-3xl mx-auto">Let us design your perfect wildlife adventure in Kenya's most spectacular reserves.</p>
+                <a href="allpackages.html" class="bg-[#D7CEA1] text-[#0C2E14] px-8 py-3 rounded-full font-medium inline-block hover:bg-white transition-all">Explore All Safari Packages</a>
+            </div>
+        </section>
+
+        <!-- Staycations Section -->
+        <section id="staycations" class="section hidden opacity-0">
+            <!-- Hero Banner -->
+            <div class="relative h-64 md:h-96 mb-12 rounded-xl overflow-hidden">
+                <div class="absolute inset-0 bg-[url('images/hotel4.jpg')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="playfair text-3xl md:text-5xl font-bold text-white mb-4">Weekend Escapes</h2>
+                        <p class="text-white text-lg md:text-xl max-w-3xl mx-auto">Weekend escapes & quick getaways close to home.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Machakos -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/hotel3.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Machakos</h3>
+                        <p class="text-white mb-4">Scenic hills and cultural experiences just outside Nairobi.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Your Staycation</a>
+                    </div>
+                </div>
+
+                <!-- Nakuru -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/hotel4.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Nakuru</h3>
+                        <p class="text-white mb-4">Lake Nakuru's flamingos and diverse wildlife.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Your Staycation</a>
+                    </div>
+                </div>
+
+                <!-- Nairobi -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/hotel2.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Nairobi</h3>
+                        <p class="text-white mb-4">Luxury city retreats with all amenities.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Your Staycation</a>
+                    </div>
+                </div>
+
+                <!-- Elementaita -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/hotel1.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Elementaita</h3>
+                        <p class="text-white mb-4">Tranquil lakeside retreats in the Great Rift Valley.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Your Staycation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-20 bg-[#0C2E14] rounded-xl p-12 text-center">
+                <h3 class="playfair text-3xl md:text-4xl font-bold text-[#D7CEA1] mb-6">Need a quick escape?</h3>
+                <p class="text-white text-xl mb-8 max-w-3xl mx-auto">Our staycation packages offer the perfect blend of relaxation and adventure, all within easy reach.</p>
+                <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-8 py-3 rounded-full font-medium inline-block hover:bg-white transition-all">Book Your Staycation</a>
+            </div>
+        </section>
+
+        <!-- Beach Holidays Section -->
+        <section id="beach" class="section hidden opacity-0">
+            <!-- Hero Banner -->
+            <div class="relative h-64 md:h-96 mb-12 rounded-xl overflow-hidden">
+                <div class="absolute inset-0 bg-[url('images/diani.jpg')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="playfair text-3xl md:text-5xl font-bold text-white mb-4">Kenya's Pristine Coast</h2>
+                        <p class="text-white text-lg md:text-xl max-w-3xl mx-auto">Turquoise waters, white sands, timeless culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Watamu -->
+                <div class="destination-card relative h-96 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/beach.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Watamu</h3>
+                        <div class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                            <p class="text-white mb-4">Marine paradise with coral reefs and white sand beaches.</p>
+                            <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Malindi -->
+                <div class="destination-card relative h-96 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Malindi</h3>
+                        <div class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                            <p class="text-white mb-4">Historic coastal town with Italian influences.</p>
+                            <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mombasa -->
+                <div class="destination-card relative h-96 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/beach1.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Mombasa</h3>
+                        <div class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                            <p class="text-white mb-4">Vibrant coastal city with rich Swahili culture.</p>
+                            <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diani -->
+                <div class="destination-card relative h-96 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/beach2.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Diani</h3>
+                        <div class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                            <p class="text-white mb-4">Award-winning beach with luxury resorts.</p>
+                            <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lamu -->
+                <div class="destination-card relative h-96 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/beach3.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Lamu</h3>
+                        <div class="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                            <p class="text-white mb-4">Ancient Swahili town with car-free streets.</p>
+                            <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-20 bg-[#0C2E14] rounded-xl p-12 text-center">
+                <h3 class="playfair text-3xl md:text-4xl font-bold text-[#D7CEA1] mb-6">Paradise Awaits</h3>
+                <p class="text-white text-xl mb-8 max-w-3xl mx-auto">From luxury beach resorts to cultural experiences, Kenya's coast offers unforgettable holiday experiences.</p>
+                <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-8 py-3 rounded-full font-medium inline-block hover:bg-white transition-all">Book Your Beach Holiday</a>
+            </div>
+        </section>
+
+        <!-- Lakeside Section -->
+        <section id="lakeside" class="section hidden opacity-0">
+            <!-- Hero Banner -->
+            <div class="relative h-64 md:h-96 mb-12 rounded-xl overflow-hidden">
+                <div class="absolute inset-0 bg-[url('images/lake.jpg')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="playfair text-3xl md:text-5xl font-bold text-white mb-4">Tranquil Lakeside Retreats</h2>
+                        <p class="text-white text-lg md:text-xl max-w-3xl mx-auto">Relax by Kenya's tranquil lakesides.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Kisumu -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/lakevic.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Kisumu</h3>
+                        <p class="text-white mb-4">Vibrant city on the shores of Lake Victoria.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Baringo -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/lakeb.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Baringo</h3>
+                        <p class="text-white mb-4">Freshwater lake with hippos and birdlife.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Nakuru -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/lakenaks.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Nakuru</h3>
+                        <p class="text-white mb-4">Flamingo-filled alkaline lake in the Rift Valley.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Naivasha -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/lakenaiv.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Naivasha</h3>
+                        <p class="text-white mb-4">Freshwater lake with hippos and boat rides.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Elementaita -->
+                <div class="destination-card relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-[url('images/lakeeleme.jpg')] bg-cover bg-center image-hover-effect"></div>
+                    <div class="absolute inset-0 card-overlay flex flex-col justify-end p-6">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Elementaita</h3>
+                        <p class="text-white mb-4">Serene alkaline lake with flamingos.</p>
+                        <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-6 py-2 rounded-full font-medium inline-block w-fit hover:bg-white transition-all">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-20 bg-[#0C2E14] rounded-xl p-12 text-center">
+                <h3 class="playfair text-3xl md:text-4xl font-bold text-[#D7CEA1] mb-6">Peaceful Lakeside Getaways</h3>
+                <p class="text-white text-xl mb-8 max-w-3xl mx-auto">From birdwatching to boat safaris, Kenya's lakes offer unique experiences away from the crowds.</p>
+                <a href="booking.html" class="bg-[#D7CEA1] text-[#0C2E14] px-8 py-3 rounded-full font-medium inline-block hover:bg-white transition-all">Book Your Lakeside Retreat</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0C2E14] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-[#D7CEA1] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#D7CEA1] transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-[#D7CEA1] transition">Contact Us</a></li>
+                        <li><a href="allpackages.html" class="hover:text-[#D7CEA1] transition">Safaris</a></li>
+                        <li><a href="blog.html" class="hover:text-[#D7CEA1] transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.facebook.com/rimaafricasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@rimasafaris" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rima-africa-safaris-42537b32b/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rima_africa_safaris/" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-x"></i>
+                        </a>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                          <i class="fas fa-envelope"></i>
+                        <a href="mailto:safaris@rimaafrica.com" class="hover:underline">safaris@rimaafrica.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+254714728554" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/254714728554" target="_blank" class="hover:underline">+254 714 728 554</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Rima Africa Safaris</h3>
+                    <p class="mb-4">We are a premier safari company offering luxury wildlife experiences across East and Southern Africa, committed to sustainable tourism and unforgettable adventures.</p>
+                    <img src="images/logo.png" alt="Rima Africa Safaris" class="h-22">
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-12 pt-6 text-center text-sm">
+                <p>Terms and Conditions | Privacy Policy | Copyright © 2025 Rima Africa Safaris. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show initial section
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('safaris');
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('opacity-100');
+                section.classList.add('opacity-0');
+            });
+
+            // Show selected section
+            const section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            setTimeout(() => {
+                section.classList.remove('opacity-0');
+                section.classList.add('opacity-100');
+            }, 10);
+
+            // Update tab states
+            const tabNames = ['safaris', 'staycations', 'beach', 'lakeside'];
+            tabNames.forEach(tab => {
+                const buttons = document.querySelectorAll(`button[onclick="showSection('${tab}')"]`);
+                buttons.forEach(button => {
+                    if (tab === sectionId) {
+                        button.classList.remove('tab-inactive');
+                        button.classList.add('tab-active');
+                    } else {
+                        button.classList.remove('tab-active');
+                        button.classList.add('tab-inactive');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

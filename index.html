@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rima Africa Safaris | Luxury African Safari Experiences</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -59,26 +60,64 @@
     </style>
 </head>
 <body class="bg-[#D7CEA1]">
-    <!-- Header -->
-    <header class="py-6">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
-                <p class="text-sm md:text-base mt-2">Journey into the Heart of Africa</p>
-            </div>
-            
-            <nav class="mt-8">
-                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
-                    <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
-                    <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
-                    <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
-                    <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
-                    <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
-                    <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-[#D7CEA1] shadow-md">
+  <div class="container mx-auto px-4 flex items-center justify-between py-4">
+    
+    <!-- Logo & Brand Name with Link -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Rima Africa Safaris" class="h-16 w-auto">
+      <div>
+        <h1 class="text-lg md:text-2xl font-bold text-[#0C2E14]">Rima Africa Safaris</h1>
+        <p class="text-xs md:text-sm">Safaris that Speak Africa</p>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 lg:gap-10">
+        <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+        <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+        <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+        <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+        <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+        <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+        <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-[#0C2E14] text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-[#D7CEA1] border-t border-[#0C2E14]/20">
+    <ul class="flex flex-col items-center py-4 space-y-3">
+      <li><a href="index.html" class="font-medium hover:text-[#0C2E14] transition">Home</a></li>
+      <li><a href="about.html" class="font-medium hover:text-[#0C2E14] transition">About</a></li>
+      <li><a href="allpackages.html" class="font-medium hover:text-[#0C2E14] transition">Safaris</a></li>
+      <li><a href="destinations.html" class="font-medium hover:text-[#0C2E14] transition">Destinations</a></li>
+      <li><a href="gallery.html" class="font-medium hover:text-[#0C2E14] transition">Gallery</a></li>
+      <li><a href="blog.html" class="font-medium hover:text-[#0C2E14] transition">Blog</a></li>
+      <li><a href="contact.html" class="font-medium hover:text-[#0C2E14] transition">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- JS for Mobile Menu Toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
 
     <!-- Hero Section -->
    <section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
@@ -254,41 +293,7 @@
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
                     <div class="relative">
                     <a href="maasai-mara.html">
-                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
-                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
-                        View Itinerary
-                      </span>
-                    </a>
-                  </div>
-                    <div class="p-6">
-                        <span class="text-sm text-gray-600">4 Days / 3 Nights</span>
-                        <h3 class="text-xl font-bold mt-2 mb-4">Okavango Delta</h3>
-                        <p class="text-gray-700">Mokoro canoe safaris in Botswana's unique inland delta ecosystem.</p>
-                    </div>
-                </div>
-                
-                <!-- Package 4 -->
-                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                    <a href="maasai-mara.html">
-                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
-                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
-                        View Itinerary
-                      </span>
-                    </a>
-                  </div>
-                    <div class="p-6">
-                        <span class="text-sm text-gray-600">6 Days / 5 Nights</span>
-                        <h3 class="text-xl font-bold mt-2 mb-4">Kruger National Park</h3>
-                        <p class="text-gray-700">South Africa's premier safari destination with exceptional game viewing.</p>
-                    </div>
-                </div>
-                
-                <!-- Package 5 -->
-                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                    <a href="maasai-mara.html">
-                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <img src="images/diani.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
                       <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
                         View Itinerary
                       </span>
@@ -296,8 +301,42 @@
                   </div>
                     <div class="p-6">
                         <span class="text-sm text-gray-600">3 Days / 2 Nights</span>
-                        <h3 class="text-xl font-bold mt-2 mb-4">Bwindi Impenetrable</h3>
-                        <p class="text-gray-700">Gorilla trekking in Uganda's misty mountain forests.</p>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Diani Beach</h3>
+                        <p class="text-gray-700">Experience a Blissful getaway vacation in sunny sandy beaches</p>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/safari9.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">8 Days Safari in Kenya</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Amboseli, Naivasha and Maasai Mara</h3>
+                        <p class="text-gray-700">Exceptional 8 days in Kenya to visit the most amazing safaris</p>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                    <a href="maasai-mara.html">
+                      <img src="images/mtkenya.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
+                        View Itinerary
+                      </span>
+                    </a>
+                  </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-600">8 Days Samburu and Central circuit</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Samburu, Mt. Kenya, Lake Nakuru and Maasai Mara</h3>
+                        <p class="text-gray-700">Visit the most amazing safari destinations in Kenya</p>
                     </div>
                 </div>
                 
@@ -305,16 +344,16 @@
                 <div class="package-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
                     <div class="relative">
                     <a href="maasai-mara.html">
-                      <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
+                      <img src="images/salt.jpg" alt="Maasai Mara" class="w-full h-48 object-cover">
                       <span class="absolute top-4 right-4 bg-[#0C2E14] text-white text-xs px-3 py-1 rounded-full">
                         View Itinerary
                       </span>
                     </a>
                   </div>
                     <div class="p-6">
-                        <span class="text-sm text-gray-600">4 Days / 3 Nights</span>
-                        <h3 class="text-xl font-bold mt-2 mb-4">Etosha National Park</h3>
-                        <p class="text-gray-700">Namibia's wildlife haven centered around a massive salt pan.</p>
+                        <span class="text-sm text-gray-600">8 Days  in Kenya Safari</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">Amboseli, Maasai Mara, Lake Naivasha</h3>
+                        <p class="text-gray-700">Embark on an epic 8-day Kenya safari that promises to dazzle you with the finest wildlife experiences in the country! </p>
                     </div>
                 </div>
             </div>
@@ -337,24 +376,25 @@
             <div class="relative max-w-4xl mx-auto">
                 <!-- Carousel Items -->
                 <div class="carousel-item active relative rounded-lg overflow-hidden">
-                    <img src="images/safari6.jpg" alt="Lake Naivasha" class="w-full h-96 object-cover">
+                    <img src="images/safari7.jpeg" alt="Lake Naivasha" class="w-full h-96 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                         <h3 class="text-2xl font-bold text-white">Lake Naivasha</h3>
                     </div>
                 </div>
                 
                 <div class="carousel-item hidden relative rounded-lg overflow-hidden">
-                    <img src="images/safari1.jpg" alt="Serengeti Plains" class="w-full h-96 object-cover">
+                    <img src="images/safari5.jpg" alt="Serengeti Plains" class="w-full h-96 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                         <h3 class="text-2xl font-bold text-white">Serengeti Plains</h3>
                     </div>
                 </div>
                 
                 <div class="carousel-item hidden relative rounded-lg overflow-hidden">
-                    <img src="images/safari2.jpg" alt="Maasai Mara" class="w-full h-96 object-cover">
+                    <img src="images/safari6.jpg" alt="Maasai Mara" class="w-full h-96 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                         <h3 class="text-2xl font-bold text-white">Maasai Mara</h3>
                     </div>
+                    
                 </div>
                 
                 <!-- Navigation Arrows -->
@@ -614,7 +654,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">About Rima Africa Safaris</h3>
                     <p class="mb-4">We are a premier safari company offering luxury wildlife experiences across East and Southern Africa, committed to sustainable tourism and unforgettable adventures.</p>
-                    <img src="images/logo.png" alt="Rima Africa Safaris" class="h-12">
+                    <img src="images/logo.png" alt="Rima Africa Safaris" class="h-22">
                 </div>
             </div>
             
